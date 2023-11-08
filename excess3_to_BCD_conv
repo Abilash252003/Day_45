@@ -1,0 +1,29 @@
+///100 days of RTL///
+
+///Abilash P///
+
+///Excess 3 to BCD code convertor///
+
+module excess3_to_bcd (E, BC);
+
+input  [3:0] E;
+output reg [3:0] BC;
+
+always @ (*)
+begin
+case (E)
+  4'b0011 : BC=4'b0000;
+  4'b0100 : BC=4'b0001;
+  4'b0101 : BC=4'b0010;
+  4'b0110 : BC=4'b0011;
+  4'b0111 : BC=4'b0100;
+  4'b1000 : BC=4'b0101;
+  4'b1001 : BC=4'b0110;
+  4'b1010 : BC=4'b0111;
+  4'b1011 : BC=4'b1000;
+  4'b1100 : BC=4'b1001; 
+  default : BC=4'bxxxx;
+endcase
+end
+
+endmodule
