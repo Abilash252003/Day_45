@@ -1,0 +1,28 @@
+///100 days of RTL///
+
+///Abilash P///
+
+///Excess 3 to BCD code convertor///
+
+module excess3_to_bcd_tb ();
+
+reg [3:0] E;
+wire[3:0] BC;
+
+excess3_to_bcd DUT (.E(E), .BC(BC));
+
+integer i;
+
+initial
+begin
+  for (i=0; i<16; i=i+1)
+    begin
+       E = i;
+       $display ("The Excess 3  Code is = %b, Excess 3 code in decimal = %d", E, E);
+       #20;
+       $display ("The Equivalent BCD code is = %b, BCD code in decimal = %d", BC, BC);
+    end
+end
+
+endmodule
+   
